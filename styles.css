@@ -391,10 +391,11 @@ footer {
         /* fallback */
         height: 100dvh;
         background-color: var(--secondary-color);
-        top: 85px;
+        top: 78px;
         left: -100%;
         text-align: center;
         transition: all 0.4s;
+        overflow: hidden;
     }
 
     .links {
@@ -458,6 +459,10 @@ footer {
 
     .brand-info>h1 {
         font-size: 3.25rem;
+    }
+
+    .brand-info > p {
+        display: none;
     }
 
     .CTA>h2 {

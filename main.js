@@ -5,10 +5,20 @@ const selectAll = (selector) => document.querySelectorAll(selector)
 // Get elements
 const menuIcon = select(".menu-img")
 const navLinks = select(".links")
+const primaryNavigation = select("#primary-navigation")
 
-// Open / Close Menu
-menuIcon.addEventListener('click', function() {
+// Menu Behavior
+menuIcon.addEventListener('click', function () {
     navLinks.classList.toggle("show")
+})
+
+// Prevent Touch Scrolling When Menu Is Active
+navLinks.addEventListener("touchmove", function(e) {
+    e.preventDefault()
+})
+
+primaryNavigation.addEventListener("touchmove", function(e) {
+    e.preventDefault()
 })
 
 // Get Scroll Height
