@@ -313,10 +313,6 @@ footer {
     cursor: pointer;
 }
 
-.socials>a>img {
-    margin-right: 0.5rem;
-}
-
 .footer-col-group {
     display: grid;
     justify-content: space-evenly;
@@ -461,7 +457,7 @@ footer {
         font-size: 3.25rem;
     }
 
-    .brand-info > p {
+    .brand-info>p {
         display: none;
     }
 
