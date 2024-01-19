@@ -4,20 +4,25 @@ const selectAll = (selector) => document.querySelectorAll(selector)
 
 // Get elements
 const menuIcon = select(".menu-img")
-const navLinks = select(".links")
+const navList = select(".links")
+const navLinks = selectAll(".nav-link")
 const primaryNavigation = select("#primary-navigation")
 
 // Menu Behavior
 menuIcon.addEventListener('click', function () {
-    navLinks.classList.toggle("show")
+    navList.classList.toggle("show")
+
+    navLinks.forEach(navLink => navLink.addEventListener("click", function () {
+        navList.classList.remove("show")
+    }))
 })
 
 // Prevent Touch Scrolling When Menu Is Active
-navLinks.addEventListener("touchmove", function(e) {
+navList.addEventListener("touchmove", function (e) {
     e.preventDefault()
 })
 
-primaryNavigation.addEventListener("touchmove", function(e) {
+primaryNavigation.addEventListener("touchmove", function (e) {
     e.preventDefault()
 })
 
