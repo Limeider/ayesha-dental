@@ -412,7 +412,7 @@ footer {
     }
 
     .nav-link {
-        padding: 0.75rem 5rem;
+        padding: 0.75rem 4rem;
         background-color: var(--primary-color);
     }
 
