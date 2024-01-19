@@ -15,6 +15,14 @@
     font-family: 'Epilogue', sans-serif;
 }
 
+@font-face {
+    font-family: 'Epilogue';
+    src: url('./fonts/Epilogue-Regular.ttf') format('truetype'),
+        url('./fonts/Epilogue-Bold.ttf') format('truetype'),
+        url('./fonts/Epilogue-Medium.ttf') format('truetype'),
+        url('./fonts/Epilogue-ExtraBold.ttf') format('truetype');
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding: var(--scroll-padding, 10rem);
@@ -31,10 +39,12 @@ nav {
 }
 
 ul {
-    display: flex;
     list-style: none;
-    justify-content: space-around;
-    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .branding {
@@ -60,6 +70,17 @@ ul {
     opacity: 0.8;
 }
 
+nav {
+    padding: 0 2rem;
+}
+
+#primary-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
 .links {
     display: flex;
     gap: 1.5rem;
@@ -67,9 +88,9 @@ ul {
 
 .nav-link {
     color: var(--background-color);
-    background-color: #85A7D7;
+    background-color: var(--primary-color);
     padding: 0.75rem 1.75rem;
-    border-radius: 6px;
+    border-radius: 0.5rem;
     text-decoration: none;
 }
 
@@ -77,9 +98,10 @@ ul {
     width: 50px;
     height: 50px;
     display: none;
+    cursor: pointer;
 }
 
-.active {
+.accent-color {
     background-color: var(--secondary-color);
 }
 
@@ -89,8 +111,12 @@ ul {
     align-items: center;
 }
 
-.flex-direction {
+.flex-direction-row {
     flex-direction: row;
+}
+
+.flex-direction-col {
+    flex-direction: column;
 }
 
 .contact-section {
@@ -153,6 +179,7 @@ ul {
     padding: 1.25rem 2rem;
     border-radius: 1rem;
     line-height: 1.4;
+    width: 90%;
 }
 
 #Services {
@@ -202,38 +229,122 @@ ul {
     opacity: 0.8;
 }
 
-#About {
-    height: 1000px;
-}
-
-footer {
-    background-color: var(--foreground-color);
-    text-align: center;
-    padding: 5rem 0;
-}
-
-.white {
-    color: var(--background-color);
-}
-
 .general-image-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: var(--foreground-color);
     gap: 1rem;
     overflow: hidden;
+    padding: 5rem 0;
+}
+
+.faculty-img {
+    justify-self: center;
 }
 
 .stock-img {
-    width: 600px;
-    height: 500px;
+    width: 550px;
+    height: 400px;
     justify-self: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.about-us {
+    background-color: var(--foreground-color);
+    padding: 2.5rem 3.5rem;
+}
+
+.about-us>h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+.about-us>p {
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+footer {
+    background-color: var(--foreground-color);
+    padding: 5rem 0 0 0;
+}
+
+.footer-branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link {
+    margin: 0.5rem 0;
+}
+
+.footer-end {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: 1.25rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.credits {
+    color: var(--background-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.socials>a>img {
+    margin-right: 0.5rem;
+}
+
+.footer-col-group {
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-col-group>.brand-info {
+    margin-left: 3rem;
+}
+
+.footer-col-group>.brand-info>h1 {
+    font-size: 5rem;
+}
+
+.footer-col-group>div>h2 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.footer-col-group>div>ul>li {
+    margin-top: 0.75rem;
 }
 
 @media screen and (max-width: 1000px) {
 
     body {
-        padding: 0.5rem;
+        padding: 0 0.5rem 0 0.5rem;
     }
 
     .service-group {
@@ -242,12 +353,15 @@ footer {
 
     .CTA>p {
         width: 80%;
-        line-height: 1.2;
     }
 
     .stock-img {
         max-width: 350px;
         max-height: 300px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -266,12 +380,45 @@ footer {
         font-size: 2.25rem;
     }
 
-    .links {
-        display: none;
-    }
-
     .menu-img {
         display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        /* fallback */
+        height: 100dvh;
+        background-color: var(--secondary-color);
+        top: 85px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.4s;
+    }
+
+    .links {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1.5rem;
+        z-index: 1;
+    }
+
+    .links>li {
+        padding: 0.75rem 0;
+        background-color: var(--primary-color);
+        border-radius: 0.25rem;
+        width: 50%;
+    }
+
+    .nav-link {
+        padding: 0;
+        background-color: var(--primary-color);
+    }
+
+    nav ul.show {
+        left: 0;
     }
 
     .service-group {
@@ -284,12 +431,33 @@ footer {
         max-height: 200px;
     }
 
+    #Home {
+        background: url('./images/pexels-cedric-fauntleroy-4270362.jpg') center/cover no-repeat;
+    }
+
+    .footer-col-group>.brand-info {
+        margin-left: 0;
+    }
+
+    .footer-col-group {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-top: 3rem;
+    }
+
+    .service-description {
+        margin-left: 1rem;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
 
-    .brand-info>p:not(.exclude) {
-        display: none;
+    .brand-info>h1 {
+        font-size: 3.25rem;
     }
 
     .CTA>h2 {
@@ -313,7 +481,7 @@ footer {
     .service-img {
         margin-right: 0;
     }
-    
+
     .general-image-group {
         grid-template-columns: 1fr;
     }
@@ -323,4 +491,19 @@ footer {
         max-height: 250px;
     }
 
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-us {
+        padding: 2.5rem 1rem;
+    }
+
+    .about-us>h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-us>p {
+        font-size: 13px;
+    }
 }

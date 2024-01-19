@@ -3,13 +3,13 @@ const select = (selector) => document.querySelector(selector)
 const selectAll = (selector) => document.querySelectorAll(selector)
 
 // Get elements
-const menu = select("#menuList")
 const menuIcon = select(".menu-img")
-const navigation = select("#primary-navigation")
+const navLinks = select(".links")
 
-// Add Event Listeners
-
-
+// Open / Close Menu
+menuIcon.addEventListener('click', function() {
+    navLinks.classList.toggle("show")
+})
 
 // Get Scroll Height
 const navigationHeight = navigation.offsetHeight;
