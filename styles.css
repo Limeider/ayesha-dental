@@ -119,6 +119,10 @@ nav {
     flex-direction: column;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .contact-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -142,6 +146,7 @@ nav {
 
 .header-info-col>p {
     opacity: 0.9;
+    word-break: break-all;
 }
 
 #Home {
@@ -184,7 +189,6 @@ nav {
 
 #Services {
     background-color: var(--foreground-color);
-    padding-bottom: 7rem;
 }
 
 .heading-container {
@@ -196,6 +200,12 @@ nav {
     font-size: 3.5rem;
     color: var(--secondary-color);
     padding: 2.5rem 0;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
 }
 
 .service-group {
@@ -330,7 +340,7 @@ footer {
 
 .footer-col-group>div>h2 {
     color: var(--secondary-color);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .footer-col-group>div>ul>li {
