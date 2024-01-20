@@ -140,8 +140,12 @@ nav {
     color: var(--secondary-color);
 }
 
-.header-info-col>p {
+.header-info-col>p:not(.email) {
     opacity: 0.9;
+    word-break: normal;
+}
+
+.email  {
     word-break: break-all;
 }
 
@@ -257,6 +261,7 @@ nav {
 
 .faculty-group > h2 {
     color: var(--secondary-color);
+    text-align: center;
 }
 
 .stock-img {
@@ -471,6 +476,10 @@ footer {
     .social-link {
         display: flex;
         justify-content: center;
+    }
+
+    .faculty-img {
+        width: 80%;
     }
 
 }
