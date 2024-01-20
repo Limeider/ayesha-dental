@@ -119,10 +119,6 @@ nav {
     flex-direction: column;
 }
 
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
 .contact-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -248,8 +244,19 @@ nav {
     padding: 5rem 0;
 }
 
+.faculty-group {
+    gap: 1.5rem;
+} 
+
 .faculty-img {
     justify-self: center;
+    width: 400px;
+    height: 300px;
+    aspect-ratio: 1;
+}
+
+.faculty-group > h2 {
+    color: var(--secondary-color);
 }
 
 .stock-img {
@@ -441,7 +448,7 @@ footer {
     }
 
     #Home {
-        background: url('./images/pexels-cedric-fauntleroy-4270362.jpg') center/cover no-repeat;
+        background: url('./images/hero-background-mobile.jpg') center/cover no-repeat;
     }
 
     .footer-col-group>.brand-info {
@@ -504,7 +511,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .stock-img {
+    .stock-imgs {
         max-width: 300px;
         max-height: 250px;
     }
@@ -532,5 +539,4 @@ footer {
     .brand-info>h1 {
         display: none;
     }
-
 }
